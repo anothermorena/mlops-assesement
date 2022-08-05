@@ -4,3 +4,5 @@ Tasks-PDF.pdf
 #Virtual Environment
 /venv
 
+# Byte-compiled Files
+data_scrapping/__pycache__/
