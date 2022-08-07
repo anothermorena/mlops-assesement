@@ -14,22 +14,22 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 #2. clean, stem and vectorize tweets
 #===================================
 def preprocess_tweets(df):
-    # Stemming
+    # stemming
     ps = PorterStemmer()
-    # Initializing Lists
+    # initializing Lists
     corpus = []
     for i in range(0, len(df)):
-        # Removing characters other than letters
+        # removing characters other than letters
         review = re.sub('[^a-zA-Z]', ' ', str(df['tweets'][i]))
-        # Lowering the case all the text
+        # lowering the case all the text
         review = review.lower()
-        # Splitting into words
+        # splitting into words
         review = review.split()
-        # Applying Stemming
+        # applying stemming
         stemmed = [ps.stem(word) for word in review if not word in stopwords.words('english')]
-        # Joining words
+        # joining words
         review = ' '.join(stemmed)
-        # Appending all tweets to a list after preprocessing
+        # appending all tweets to a list after preprocessing
         corpus.append(review)
     
     #apply TF-IDF Vectorization
@@ -115,9 +115,8 @@ if st.sidebar.button('Predict'):
     Xlist = list(pd.read_csv('vectorized_tweets.csv').columns)
     v_tweets_subset = v_tweets[Xlist]
     
-    print(v_tweets_subset)
 
-    # apply trained model to make sentiment analysis on query  query
+    # apply trained model to make sentiment analysis on query  tweets
     build_model(v_tweets_subset)
 else:
     st.info('Upload input data in the sidebar to start!')
