@@ -4,7 +4,6 @@ import re
 import base64
 import pickle
 import pandas as pd
-import numpy as np
 from PIL import Image
 import streamlit as st
 from nltk.corpus import stopwords
@@ -94,6 +93,9 @@ st.markdown("""
 #==========
 with st.sidebar.header('1. Upload your CSV data'):
     uploaded_file = st.sidebar.file_uploader("Upload your input file", type=['csv'])
+    st.sidebar.markdown("""
+        [Example input file](https://github.com/anothermorena/mlops-assesement/blob/dashboard/dashboard/tweets_example_file.csv)
+    """)
 
 if st.sidebar.button('Predict'):
     load_data = pd.read_csv(uploaded_file)
