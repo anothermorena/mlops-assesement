@@ -10,7 +10,6 @@ from nltk.corpus import stopwords
 from nltk.stem.porter import PorterStemmer
 from sklearn.feature_extraction.text import TfidfVectorizer
 
-
 #2. clean, stem and vectorize tweets
 #===================================
 def preprocess_tweets(df):
