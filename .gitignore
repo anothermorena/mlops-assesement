@@ -1,16 +1,5 @@
-# The Tasks document from Seriti Insights
-Tasks-PDF.pdf
-
 # Virtual Environment
-/venv
+/dashboard/venv/
 
-# Byte-compiled Files
-/data_scrapping/__pycache__/
 
-# Dataset
-/model_building/dataset/
-/model_building/stemmed.csv
-
-#Notebook Checkpoints"
-/model_building/.ipynb_checkpoints/
 
